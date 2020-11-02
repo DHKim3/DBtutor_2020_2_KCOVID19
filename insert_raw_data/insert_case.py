@@ -5,9 +5,9 @@ import pymysql
 
 #mysql server 연결, port 및 host 주의!
 conn = pymysql.connect(host='localhost',
-                        port = 8889,
+                        port = 3306,
                         user='root', 
-                        password='@ehdgml12', 
+                        password='julie0928K!', 
                         db='K_COVID19', 
                         charset='utf8')
 
@@ -33,7 +33,7 @@ with open("./data/Case.csv", 'r') as file:
         city = line[2]                      #city
 
         #infection_group
-        if line[3] == "True":
+        if line[3] == "TRUE":
             line[3] = True
         else:
             line[3] = False

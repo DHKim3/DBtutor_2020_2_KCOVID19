@@ -5,9 +5,9 @@ import pymysql
 
 #mysql server 연결, port 및 host 주의!
 conn = pymysql.connect(host='localhost',
-                        port = 8889,
+                        port = 3306,
                         user='root', 
-                        password='@ehdgml12', 
+                        password='julie0928K!', 
                         db='K_COVID19', 
                         charset='utf8')
 

@@ -3,7 +3,7 @@ import pymysql
 
 
 
-conn = pymysql.connect(host="localhost",port=8889, user="root", password="@ehdgml12",db="K_COVID19", charset="utf8")
+conn = pymysql.connect(host="localhost",port=3306, user="root", password="julie0928K!",db="K_COVID19", charset="utf8")
 cursor = conn.cursor()
 
 f = open('./data/Weather.csv','r')
