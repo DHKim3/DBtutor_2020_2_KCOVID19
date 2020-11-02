@@ -33,6 +33,7 @@ create table Region(
     university_count int,
     academy_ratio float,
     elderly_population_ratio float,
+    elderly_alone_ratio float,
     nursing_home_count int,
     PRIMARY KEY(region_code)
 );

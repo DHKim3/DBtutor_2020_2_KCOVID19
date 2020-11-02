@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*- 
 import pymysql
 import csv
 
 #mysql server 연결, port 및 host 주의!
 conn = pymysql.connect(host='localhost',
-                        port = 8889,
+                        port = 3306,
                         user='root', 
-                        password='@ehdgml12', 
+                        password='julie0928K!', 
                         db='K_COVID19', 
                         charset='utf8')
 
@@ -50,7 +51,9 @@ with open("../combine/K_COVID19.csv", 'r') as file:
 
         #make sql data & query
         sql_data = []
+        print(line)
         #"NULL" -> None (String -> null)
+        print(col_list.values())
         for idx in col_list.values() :
             if line[idx] == "NULL" :
                 line[idx] = None
@@ -58,10 +61,10 @@ with open("../combine/K_COVID19.csv", 'r') as file:
                 line[idx] = line[idx].strip()
 
             sql_data.append(line[idx])
-
+        print(sql_data)
         query = """INSERT INTO `patientInfo`(patient_id,sex,age,country,province,city,infection_case,infected_by,contact_number,symptom_onset_date,confirmed_date,released_date,deceased_date,state) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
         sql_data = tuple(sql_data)
-
+        #print(sql_data)
         #for debug
         try:
             cursor.execute(query, sql_data)
